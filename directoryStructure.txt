@@ -1,0 +1,13 @@
+- 341-personal/
+  - controllers/
+    - accountController.js
+  - models/
+    - dataModel.js
+    - WorkoutModel.js
+  - public/
+    - login.html
+    - register.html
+    - dashboard.html
+  - server.js
+  - .env
+  - package.json
