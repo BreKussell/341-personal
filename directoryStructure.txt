@@ -1,18 +1,21 @@
-/341-personal
-  ├── /config
-  │   └── passportConfig.js        # Configuration for Passport (if needed)
-  ├── /controllers
-  │   └── accountController.js      # Controller for login, logout, etc.
-  ├── /models
-  │   ├── dataModel.js              # User schema and model
-  │   └── fitnessModel.js           # Workout and Exercise schemas and models
-  ├── /routes
-  │   └── accountRoutes.js          # Routes for account-related operations
-  ├── /utils
-  │   └── utilities.js              # Utility functions like password hashing and validation
-  ├── /views
-  │   ├── login.ejs                 # Login page view
-  │   ├── register.ejs              # Registration page view (optional)
-  │   └── dashboard.ejs             # Dashboard view after login
-  ├── server.js                      # Main server file
-  ├── package.json                   # Project dependencies and scripts
+341-personal/
+├── controllers/
+│   ├── accountController.js
+│   └── fitnessController.js
+├── models/
+│   ├── accountModel.js
+│   └── fitnessModel.js
+├── routes/
+│   ├── accountRoutes.js
+│   └── fitnessRoutes.js
+├── utils/
+│   └── utilities.js
+├── views/
+│   ├── login.ejs
+│   ├── register.ejs
+│   └── dashboard.ejs
+├── data/
+│   └── data.json
+├── .env
+├── README.md
+└── server.js

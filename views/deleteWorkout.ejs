@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Workout</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Delete a Workout</h1>
+  <form action="/fitness/delete" method="POST">
+    <% if (workouts && workouts.length > 0) { %>
+      <ul>
+        <% workouts.forEach((workout, index) => { %>
+          <li>
+            <label>
+              <input type="radio" name="workoutIndex" value="<%= index %>" required>
+              <strong><%= workout.type %></strong> - Goal: <%= workout.goal %>, Achieved: <%= workout.achieved %>, Date: <%= workout.date %>
+            </label>
+          </li>
+        <% }) %>
+      </ul>
+      <button type="submit">Delete Selected Workout</button>
+    <% } else { %>
+      <p>No workouts available for deletion.</p>
+    <% } %>
+  </form>
+</body>
+</html>

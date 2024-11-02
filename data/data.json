@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "username": "john_doe",
+      "password": "password123"
+    },
+    {
+      "username": "jane_smith",
+      "password": "mypassword"
+    },
+    {
+      "username": "alex_jones",
+      "password": "12345678"
+    },
+    {
+      "username": "name",
+      "password": "password"
+    }
+  ],
+  "fitness": {
+    "john_doe": [
+      {
+        "type": "cardio",
+        "goal": "5 miles",
+        "achieved": "4.2 miles",
+        "date": "2024-10-28"
+      }
+    ],
+    "jane_smith": [
+      {
+        "type": "cardio",
+        "goal": "30 minutes",
+        "achieved": "25 minutes",
+        "date": "2024-10-28"
+      },
+      {
+        "type": "strength",
+        "goal": "50 kg squat",
+        "achieved": "50 kg",
+        "date": "2024-10-30"
+      }
+    ],
+    "alex_jones": [
+      {
+        "type": "distance",
+        "goal": "10 miles",
+        "achieved": "8 miles",
+        "date": "2024-10-28"
+      },
+      {
+        "type": "strength",
+        "goal": "60 kg deadlift",
+        "achieved": "55 kg",
+        "date": "2024-10-29"
+      }
+    ],
+    "name": [
+      {
+        "type": "cardio",
+        "goal": "5 miles, 1hr",
+        "achieved": "n/a",
+        "date": "2023-11-22"
+      }
+    ]
+  }
+}

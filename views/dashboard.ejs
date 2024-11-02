@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome, <%= user.username %>!</h1>
+    <nav>
+      <a href="/account/logout">Logout</a>  
+      <a href="/fitness/new">Add New Workout</a>
+      <a href="/fitness/delete">Delete Workout</a>
+      <a href="/fitness/update">Update Goal</a> 
+    </nav>
+    
+  </header>
+  <section>
+    <h2>Recent Workouts</h2>
+    <% if (workouts && workouts.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Goal</th>
+            <th>Achieved</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% workouts.forEach(workout => { %>
+            <tr>
+              <td><%= workout.type %></td>
+              <td><%= workout.goal %></td>
+              <td><%= workout.achieved %></td>
+              <td><%= workout.date %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No recent workouts found.</p>
+    <% } %>
+  </section>
+</body>
+</html>
