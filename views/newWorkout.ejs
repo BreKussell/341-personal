@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Workout</title>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  <h1>Add New Workout</h1>
+  <form action="/fitness/new" method="POST">
+    <div>
+      <label for="type">Type of Workout:</label>
+      <input type="text" id="type" name="type" required>
+    </div>
+    <div>
+      <label for="goal">Goal:</label>
+      <input type="text" id="goal" name="goal" required>
+    </div>
+    <div>
+      <label for="achieved">Achieved:</label>
+      <input type="text" id="achieved" name="achieved" required>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <button type="submit">Add Workout</button>
+  </form>
+</body>
+</html>

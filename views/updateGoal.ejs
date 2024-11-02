@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Workout Goal</title>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  <h1>Update Workout Goal</h1>
+  <form action="/fitness/update" method="POST">
+    <% if (workouts && workouts.length > 0) { %>
+      <label for="workout">Select a Workout to Update:</label>
+      <select name="workoutIndex" id="workout" required>
+        <% workouts.forEach((workout, index) => { %>
+          <option value="<%= index %>"><%= workout.type %> - Goal: <%= workout.goal %></option>
+        <% }) %>
+      </select>
+
+      <div>
+        <label for="type">Workout Type:</label>
+        <input type="text" id="type" name="type" placeholder="e.g., cardio" required>
+      </div>
+      <div>
+        <label for="goal">Goal:</label>
+        <input type="text" id="goal" name="goal" placeholder="e.g., 5 miles" required>
+      </div>
+      <div>
+        <label for="achieved">Achieved:</label>
+        <input type="text" id="achieved" name="achieved" placeholder="e.g., 4 miles" required>
+      </div>
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <button type="submit">Update Goal</button>
+    <% } else { %>
+      <p>No workouts available to update.</p>
+    <% } %>
+  </form>
+</body>
+</html>
+

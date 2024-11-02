@@ -33,3 +33,5 @@ temp/
 
 # Ignore compiled binaries
 *.out
+
+data/data.json
