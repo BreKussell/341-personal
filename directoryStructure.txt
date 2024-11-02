@@ -13,9 +13,13 @@
 ├── views/
 │   ├── login.ejs
 │   ├── register.ejs
+│   ├── updateGoal.ejs
+│   ├── newWorkout.ejs
 │   └── dashboard.ejs
 ├── data/
 │   └── data.json
+├── public/
+│   └── styles.css
 ├── .env
 ├── README.md
 └── server.js

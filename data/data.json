@@ -24,6 +24,12 @@
         "goal": "5 miles",
         "achieved": "4.2 miles",
         "date": "2024-10-28"
+      },
+      {
+        "type": "strength",
+        "goal": "100lbs lift",
+        "achieved": "78 lbs",
+        "date": "2022-02-25"
       }
     ],
     "jane_smith": [
