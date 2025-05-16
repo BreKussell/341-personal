@@ -1,18 +1,42 @@
-/* Global styles */
+/* Base Light Theme */
+:root {
+    --bg-color: #f8f8f8;
+    --text-color: #333;
+    --border-color: #ccc;
+    --nav-color: #5D3FD3;
+    --button-bg: #5D3FD3;
+    --button-hover: #4a2fb1;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f8f8f8;
+    --border-color: #333;
+    --nav-color: #bb86fc;
+    --button-bg: #bb86fc;
+    --button-hover: #9a67ea;
+}
+
 body {
     font-family: "Times New Roman", Times, serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f8f8f8;
 }
 
-/* Centered header */
-h1 {
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 20px;
+}
+
+h1 {
     margin-bottom: 20px;
 }
 
@@ -20,13 +44,14 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    margin: 0 auto 20px auto;
+    background-color: var(--bg-color);
+    margin: 0 auto;
 }
 
 form div {
@@ -45,7 +70,7 @@ form input[type="date"],
 form select {
     padding: 8px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
@@ -53,40 +78,35 @@ form button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #5D3FD3;
+    background-color: var(--button-bg);
     color: white;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #3B28B1;
+    background-color: var(--button-hover);
 }
 
-/* Centered table and nav styles */
 section {
     text-align: center;
 }
 
 table {
-    width: 80%;
+    width: 100%;
+    max-width: 500px;
     border-collapse: collapse;
     margin: 20px auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-}
-
-table thead {
-    background-color: #f2f2f2;
 }
 
 table th, table td {
     padding: 12px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 }
 
-/* Centered and styled navigation */
 nav {
     display: flex;
     justify-content: center;
@@ -96,7 +116,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #5D3FD3;
+    color: var(--nav-color);
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 5px;
@@ -104,5 +124,10 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #e6ffe6;
+    background-color: rgba(187, 134, 252, 0.1);
+}
+
+.toggle-container {
+    text-align: center;
+    margin-top: 10px;
 }

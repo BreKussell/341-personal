@@ -2,19 +2,23 @@
   "users": [
     {
       "username": "john_doe",
-      "password": "password123"
+      "password": "password123",
+      "darkMode": true
     },
     {
       "username": "jane_smith",
-      "password": "mypassword"
+      "password": "mypassword",
+      "darkMode": true
     },
     {
       "username": "alex_jones",
-      "password": "12345678"
+      "password": "12345678",
+      "darkMode": false
     },
     {
       "username": "name",
-      "password": "password"
+      "password": "password",
+      "darkMode": false
     }
   ],
   "fitness": {
@@ -30,6 +34,12 @@
         "goal": "100lbs lift",
         "achieved": "78 lbs",
         "date": "2022-02-25"
+      },
+      {
+        "type": "cardio",
+        "goal": "10 miles 3 hours",
+        "achieved": "n/a",
+        "date": "2024-01-24"
       }
     ],
     "jane_smith": [

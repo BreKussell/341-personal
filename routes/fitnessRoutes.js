@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const fitnessController = require('../controllers/fitnessController'); // Importing the controller
 
+router.get('/dashboard', fitnessController.showDashboard);
+router.post('/toggle-dark-mode', fitnessController.toggleDarkMode);
+
 // Route to show the "Add New Workout" form
 router.get('/new', fitnessController.showNewWorkoutForm);
 

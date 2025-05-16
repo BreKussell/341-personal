@@ -30,9 +30,10 @@ exports.addWorkout = (req, res) => {
 
     // Fetch the updated workouts for the user
     const updatedWorkouts = data.fitness[username];
+    const user = data.users.find(user => user.username === username);
 
-    // Render the dashboard view with updated workouts
-    res.render('dashboard', { message: `Workout added successfully, ${username}!`, workouts: updatedWorkouts, user: { username } });
+    // Render the dashboard view with updated workouts and dark mode preference
+    res.render('dashboard', { message: `Workout added successfully, ${username}!`, workouts: updatedWorkouts, user, darkMode: user.darkMode });
 };
 
 // Display the "Delete Workout" page with current workouts
@@ -67,9 +68,10 @@ exports.deleteWorkout = (req, res) => {
 
     // Fetch the updated workouts for the user
     const updatedWorkouts = data.fitness[username] || [];
+    const user = data.users.find(user => user.username === username);
 
-    // Render the dashboard view with updated workouts
-    res.render('dashboard', { message: `Workout deleted successfully, ${username}!`, workouts: updatedWorkouts, user: { username } });
+    // Render the dashboard view with updated workouts and dark mode preference
+    res.render('dashboard', { message: `Workout deleted successfully, ${username}!`, workouts: updatedWorkouts, user, darkMode: user.darkMode });
 };
 
 // Display the "Update Goal" form with current workouts
@@ -82,7 +84,6 @@ exports.showUpdateGoalForm = (req, res) => {
     // Retrieve the user's workouts
     const workouts = data.fitness[username] || [];
 
-    // Render the updateGoal view with the workouts data
     res.render('updateGoal', { workouts });
 };
 
@@ -106,6 +107,40 @@ exports.updateGoal = (req, res) => {
         fs.writeFileSync(path, JSON.stringify(data, null, 2));
     }
 
-    // Render the dashboard view with updated workouts
-    res.render('dashboard', { message: `Workout updated successfully!`, workouts: userWorkouts, user: { username } });
+    const user = data.users.find(user => user.username === username);
+
+    // Render the dashboard view with updated workouts and dark mode preference
+    res.render('dashboard', { message: `Workout updated successfully!`, workouts: userWorkouts, user, darkMode: user.darkMode });
+};
+
+// Display the dashboard with dark mode preference
+exports.showDashboard = (req, res) => {
+    const username = req.session.user.username;
+
+    // Read and parse the JSON file
+    const data = JSON.parse(fs.readFileSync(path));
+
+    // Retrieve user data and workouts
+    const user = data.users.find(user => user.username === username);
+    const workouts = data.fitness[username] || [];
+
+    res.render('dashboard', { message: `Welcome ${username}!`, workouts, user, darkMode: user.darkMode });
+};
+
+// Toggle dark mode and save preference
+exports.toggleDarkMode = (req, res) => {
+    const username = req.session.user.username;
+
+    // Read and parse the JSON file
+    const data = JSON.parse(fs.readFileSync(path));
+
+    // Find the user and toggle dark mode setting
+    const user = data.users.find(user => user.username === username);
+    user.darkMode = !user.darkMode;
+
+    // Write updated data back to the JSON file
+    fs.writeFileSync(path, JSON.stringify(data, null, 2));
+
+    // Redirect to the dashboard with updated setting
+    res.redirect('/dashboard');
 };
